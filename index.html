@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var ownDesc = Object.getOwnPropertyDescriptor(window, 'fetch');
+          var protoDesc =
+            !ownDesc && typeof Window !== 'undefined' && Window.prototype
+              ? Object.getOwnPropertyDescriptor(Window.prototype, 'fetch')
+              : null;
+          var desc = ownDesc || protoDesc;
+          if (desc && desc.get && !desc.set && (!ownDesc || ownDesc.configurable)) {
+            var origGet = desc.get;
+            var overrideFetch = null;
+            Object.defineProperty(window, 'fetch', {
+              configurable: true,
+              enumerable: desc.enumerable !== false,
+              get: function () {
+                return overrideFetch || origGet.call(window);
+              },
+              set: function (nextFetch) {
+                if (typeof nextFetch === 'function') {
+                  overrideFetch = nextFetch;
+                }
+              },
+            });
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <title>SK Shakil Hussain | Digital Marketing Specialist — DG MARKETER SK</title>
+    <meta
+      name="description"
+      content="Explore digital marketing services including social media marketing, Facebook and Instagram Ads, SEO, Google Ads, and social media management by SK Shakil Hussain (DG MARKETER SK)."
+    />
+    <meta
+      name="keywords"
+      content="digital marketing specialist, social media marketing, Facebook Ads, Instagram Ads, SEO, Google Ads, social media management, DG MARKETER SK, SK Shakil Hussain"
+    />
+    <meta name="author" content="SK Shakil Hussain" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DG MARKETER SK" />
+    <meta
+      property="og:title"
+      content="SK Shakil Hussain | Digital Marketing Specialist — DG MARKETER SK"
+    />
+    <meta
+      property="og:description"
+      content="Explore digital marketing services including social media marketing, Facebook and Instagram Ads, SEO, Google Ads, and social media management by SK Shakil Hussain."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="SK Shakil Hussain | Digital Marketing Specialist — DG MARKETER SK"
+    />
+    <meta
+      name="twitter:description"
+      content="Strategic digital marketing, paid advertising, SEO, and social media management by SK Shakil Hussain."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "SK Shakil Hussain",
+        "alternateName": "DG MARKETER SK",
+        "jobTitle": "Digital Marketing Specialist",
+        "email": "mailto:dgmarketersk@gmail.com",
+        "knowsAbout": [
+          "Social Media Marketing",
+          "Facebook Ads",
+          "Instagram Ads",
+          "Search Engine Optimization",
+          "Google Ads",
+          "Social Media Management"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#07111F] text-[#F5F8FC] antialiased selection:bg-[#3B82F6]/30 selection:text-[#F5F8FC]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

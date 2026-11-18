@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07111F;
+  --bg-elevated: #0D1B2A;
+  --surface: #102238;
+  --surface-soft: #142A40;
+  --text-primary: #F5F8FC;
+  --text-secondary: #A9B8C9;
+  --text-muted: #7C91A7;
+  --blue: #3B82F6;
+  --cyan: #22D3EE;
+  --border: rgba(148, 163, 184, 0.18);
+  --success: #34D399;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Manrope', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+    scroll-padding-top: 84px;
+  }
+
+  html[lang="bn"] body {
+    font-family: 'Noto Sans Bengali', 'Manrope', system-ui, sans-serif;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Bengali', system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
